@@ -7,12 +7,11 @@ public class Libro {
     private int cantidadEjemplares;
 
     public Libro(){
-        titulo ="Java para ingeniros";
+        titulo ="Java para ingenieros";
         autor="Paulo Guerra";
         categoria="Programacion";
         anio=2014;
         cantidadEjemplares=5;
-
     }
 
     public Libro(String t,String a, String c, int an,int can){
@@ -21,16 +20,15 @@ public class Libro {
         categoria=c;
         anio=an;
         cantidadEjemplares=can;
-
     }
+
     public Libro(int cantidadEjemplares,
                  String autor, String categoria, String titulo,int anio){
         this.titulo=titulo;
-        autor=autor;
-        categoria=categoria;
-        anio=anio;
-        cantidadEjemplares=cantidadEjemplares;
-
+        this.autor=autor;
+        this.categoria=categoria;
+        this.anio=anio;
+        this.cantidadEjemplares=cantidadEjemplares;
     }
 
     public String mostrarInformacion(){
@@ -39,9 +37,8 @@ public class Libro {
         aux+="Autor: "+autor+"\n";
         aux+="Categoria: "+categoria+"\n";
         aux+="Año: "+anio+"\n";
-        aux+="Cantidad: "+cantidadEjemplares+" ejemplares(es) \n";
+        aux+="Cantidad: "+cantidadEjemplares+" ejemplares(es)\n";
         return aux;
-
     }
 
     public int prestar(){
@@ -49,11 +46,34 @@ public class Libro {
             cantidadEjemplares--;
             return cantidadEjemplares;
         }
-        return -1;  // Significa que no no hay ejemlares
-
+        return -1;
     }
 
-    public void setTitulo(String Titulo){
-        this.titulo=titulo;
+
+    public void setTitulo(String titulo){
+        this.titulo = titulo;
+    }
+
+    public void setAutor(String autor){
+        this.autor = autor;
+    }
+
+    public void setCategoria(String categoria){
+        this.categoria = categoria;
+    }
+
+    public void setAnio(int anio){
+        this.anio = anio;
+    }
+
+    public void setCantidadEjemplares(int cantidadEjemplares){
+        this.cantidadEjemplares = cantidadEjemplares;
+    }
+
+
+    public int devolver(){
+        cantidadEjemplares++;
+        return cantidadEjemplares;
     }
 }
+
